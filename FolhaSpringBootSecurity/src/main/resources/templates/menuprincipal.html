@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+
+<title>Menu</title>
+<meta charset="UTF-8" />
+
+<!-- ÍCONES GOOGLE -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet" />
+
+<!-- JQUERY -->
+<script src="https://code.jquery.com/jquery-3.6.1.js"
+	integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+	crossorigin="anonymous">
+	
+</script>
+
+<!-- MEU ESTILO CSS -->
+<link rel="stylesheet" href="css/menuvertical.css" />
+
+</head>
+
+<body class="bg">
+
+	<div class="usuariologado" align="center">
+		<h3 th:inline="text">Usuário
+			Logado:[[${#httpServletRequest.remoteUser}]]</h3>
+	</div>
+
+	<div class="formlogout" align="center">
+		<form th:action="@{/logout}" method="post">
+			<input type="submit" value="Logout"/>
+		</form>
+	</div>
+
+	<div class="btnAbre" title="Abrir Menu">
+		<span class="material-icons">menu_open</span>
+	</div>
+	
+	<nav class="menuLateral">
+		<div class="titulo" title="Fechar Menu">
+			Recursos Humanos<span class="material-icons btnFecha">close</span>
+		</div>
+		<ul>
+			<li><a href="https://dimensa.com" target="_blank">Site<span
+					class="material-icons">south_america</span></a></li>
+			<li><a href="#" class="parametros">Parâmetros<span
+					class="material-icons seta1">arrow_right</span></a>
+				<ul class="itensParametros">
+					<li><a href="http://localhost:8080/api/contatos">Funcionários</a></li>
+					<li><a href="#">Centro Custo</a></li>
+					<li><a href="#">Cargos</a></li>
+					<li><a href="#">Horário</a></li>
+				</ul>
+			<li><a href="http://localhost:8080/jesus">Usuários<span
+					class="material-icons">group</span></a></li>
+			<li><a href="#" class="tabelas">Tabelas<span
+					class="material-icons seta2">arrow_right</span></a>
+				<ul class="itensTabela">
+					<li><a
+						href="http://localhost:8080/apiencargos/encargosprincipal">Tabela
+							Global</a></li>
+					<li><a href="#">INSS</a></li>
+					<li><a href="#">IRRF</a></li>
+					<li><a href="#">Sal.Família</a></li>
+				</ul></li>
+			<li><a href="#">Estados/UF<span class="material-icons">location_city</span></a></li>
+		</ul>
+	</nav>
+	<!-- JavaScript -->
+	<script type="text/javascript" src="js/menuvertical.js"></script>
+</body>
+</html>

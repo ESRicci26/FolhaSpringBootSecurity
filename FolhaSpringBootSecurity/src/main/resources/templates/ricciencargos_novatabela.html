@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Criar Nova Tabela</title>
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+
+	<!-- ##Formato e Caminho do Thymeleaf para executar arquivos CSS e Java Scripty dentro do projeto
+	src/main/resources/static/css e src/main/resources/static/js
+	 -->
+	<link th:href="@{/css/mainricci.css}" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body class="container">
+
+	<h1 class="py-2">Inclusão de Valores e Percentuais de Encargos</h1>
+
+	<form method="post" th:action="@{/apiencargos/savefront}" th:object="${incluirEncSociaisHtml}"
+		class="col card p-3 mb-5">
+
+
+		<div class="form-row">
+			<div class="form-group">
+				<label for="clicarSituacao">Situação Tabela (V/F)</label>
+				<input id="clicarSituacao" placeholder="Situação da Tabela" type="checkbox" name="situacao"
+					th:checked="*{situacao}" class="form-control" />
+			</div>
+
+			<div class="form-group">
+				<label for="nomeTabela">Nome Tabela</label>
+				<input id="nomeTabela" placeholder="Informe Nome da Tabela" required type="text"
+					th:field="*{nomeTabela}" class="form-control" />
+			</div>
+
+			<div class="form-group">
+				<label for="dataInicio">Data Início</label>
+				<input id="dataInicio" placeholder="Data Início" required type="text" th:field="*{dataInicio}"
+					onkeypress="$(this).mask('00/00/0000')" class="form-control" />
+			</div>
+
+			<div class="form-group">
+				<label for="dataFim">Data Fim</label>
+				<input id="dataFim" placeholder="Data Fim" required type="text" th:field="*{dataFim}"
+					onkeypress="$(this).mask('00/00/0000')" class="form-control" />
+			</div>
+			<!--###FECHAMENTO DIV "form-row"###-->
+		</div>
+
+		<div class="form-row">
+			<div class="form-group">
+				<label for="faixa01Valor">Faixa 01 Valor</label>
+				<input id="faixa01Valor" placeholder="Faixa 001 Valor" required type="text" th:field="*{valorfaixa001}"
+					onkeypress="$(this).mask('##0.00', {reverse: true})" class="form-control" />
+			</div>
+
+			<div class="form-group">
+				<label for="faixa02Valor">Faixa 02 Valor</label>
+				<input id="faixa02Valor" placeholder="Faixa 002 Valor" required type="text" th:field="*{valorfaixa002}"
+					onkeypress="$(this).mask('##0.00', {reverse: true})" class="form-control" />
+			</div>
+
+			<div class="form-group">
+				<label for="faixa03Valor">Faixa 03 Valor</label>
+				<input id="faixa03Valor" placeholder="Faixa 003 Valor" required type="text" th:field="*{valorfaixa003}"
+					onkeypress="$(this).mask('##0.00', {reverse: true})" class="form-control" />
+			</div>
+
+			<div class="form-group">
+				<label for="faixa04Valor">Faixa 04 Valor</label>
+				<input id="faixa04Valor" placeholder="Faixa 004 Valor" required type="text" th:field="*{valorfaixa004}"
+					onkeypress="$(this).mask('##0.00', {reverse: true})" class="form-control" />
+			</div>
+
+			<div class="form-group">
+				<label for="faixa05Valor">Faixa 05 Valor</label>
+				<input id="faixa05Valor" placeholder="Faixa 005 Valor" required type="text" th:field="*{valorfaixa005}"
+					onkeypress="$(this).mask('##0.00', {reverse: true})" class="form-control" />
+			</div>
+			<!--###FECHAMENTO DIV "form-row"###-->
+		</div>
+
+		<div class="form-row">
+			<div class="form-group">
+				<label for="faixa06Valor">Faixa 06 Valor</label>
+				<input id="faixa06Valor" placeholder="Faixa 006 Valor" required type="text" th:field="*{valorfaixa006}"
+					onkeypress="$(this).mask('##0.00', {reverse: true})" class="form-control" />
+			</div>
+
+			<div class="form-group">
+				<label for="faixa07Valor">Faixa 07 Valor</label>
+				<input id="faixa07Valor" placeholder="Faixa 007 Valor" required type="text" th:field="*{valorfaixa007}"
+					onkeypress="$(this).mask('##0.00', {reverse: true})" class="form-control" />
+			</div>
+
+			<div class="form-group">
+				<label for="faixa08Valor">Faixa 08 Valor</label>
+				<input id="faixa08Valor" placeholder="Faixa 008 Valor" required type="text" th:field="*{valorfaixa008}"
+					onkeypress="$(this).mask('##0.00', {reverse: true})" class="form-control" />
+			</div>
+
+			<div class="form-group">
+				<label for="faixa09Valor">Faixa 09 Valor</label>
+				<input id="faixa09Valor" placeholder="Faixa 009 Valor" required type="text" th:field="*{valorfaixa009}"
+					onkeypress="$(this).mask('##0.00', {reverse: true})" class="form-control" />
+			</div>
+
+			<div class="form-group">
+				<label for="faixa10Valor">Faixa 10 Valor</label>
+				<input id="faixa10Valor" placeholder="Faixa 010 Valor" required type="text" th:field="*{valorfaixa010}"
+					onkeypress="$(this).mask('##0.00', {reverse: true})" class="form-control" />
+			</div>
+			<!--###FECHAMENTO DIV "form-row"###-->
+		</div>
+
+		<div class="form-row">
+			<div class="form-group">
+				<label for="faixa11Valor">Faixa 11 Valor</label>
+				<input id="faixa11Valor" placeholder="Faixa 011 Valor" required type="text" th:field="*{valorfaixa011}"
+					onkeypress="$(this).mask('##0.00', {reverse: true})" class="form-control" />
+			</div>
+
+			<div class="form-group">
+				<label for="faixa12Valor">Faixa 12 Valor</label>
+				<input id="faixa12Valor" placeholder="Faixa 012 Valor" required type="text" th:field="*{valorfaixa012}"
+					onkeypress="$(this).mask('##0.00', {reverse: true})" class="form-control" />
+			</div>
+
+			<div class="form-group">
+				<label for="faixa13Valor">Faixa 13 Valor</label>
+				<input id="faixa13Valor" placeholder="Faixa 013 Valor" required type="text" th:field="*{valorfaixa013}"
+					onkeypress="$(this).mask('##0.00', {reverse: true})" class="form-control" />
+			</div>
+
+			<div class="form-group">
+				<label for="faixa14Valor">Faixa 14 Valor</label>
+				<input id="faixa14Valor" placeholder="Faixa 014 Valor" required type="text" th:field="*{valorfaixa014}"
+					onkeypress="$(this).mask('##0.00', {reverse: true})" class="form-control" />
+			</div>
+
+			<div class="form-group">
+				<label for="faixa15Valor">Faixa 15 Valor</label>
+				<input id="faixa15Valor" placeholder="Faixa 015 Valor" required type="text" th:field="*{valorfaixa015}"
+					onkeypress="$(this).mask('##0.00', {reverse: true})" class="form-control" />
+			</div>
+			<!--###FECHAMENTO DIV "form-row"###-->
+		</div>
+
+		<div class="form-row">
+			<div class="form-group">
+				<label for="faixa16Valor">Faixa 16 Valor</label>
+				<input id="faixa16Valor" placeholder="Faixa 016 Valor" required type="text" th:field="*{valorfaixa016}"
+					onkeypress="$(this).mask('##0.00', {reverse: true})" class="form-control" />
+			</div>
+
+			<div class="form-group">
+				<label for="faixa17Valor">Faixa 17 Valor</label>
+				<input id="faixa17Valor" placeholder="Faixa 017 Valor" required type="text" th:field="*{valorfaixa017}"
+					onkeypress="$(this).mask('##0.00', {reverse: true})" class="form-control" />
+			</div>
+
+			<div class="form-group">
+				<label for="faixa18Valor">Faixa 18 Valor</label>
+				<input id="faixa18Valor" placeholder="Faixa 018 Valor" required type="text" th:field="*{valorfaixa018}"
+					onkeypress="$(this).mask('##0.00', {reverse: true})" class="form-control" />
+			</div>
+
+			<div class="form-group">
+				<label for="faixa19Valor">Faixa 19 Valor</label>
+				<input id="faixa19Valor" placeholder="Faixa 019 Valor" required type="text" th:field="*{valorfaixa019}"
+					onkeypress="$(this).mask('##0.00', {reverse: true})" class="form-control" />
+			</div>
+
+			<div class="form-group">
+				<label for="faixa20Valor">Faixa 20 Valor</label>
+				<input id="faixa20Valor" placeholder="Faixa 020 Valor" required type="text" th:field="*{valorfaixa020}"
+					onkeypress="$(this).mask('##0.00', {reverse: true})" class="form-control" />
+			</div>
+			<!--###FECHAMENTO DIV "form-row"###-->
+		</div>
+
+		<div class="form-row">
+			<div class="form-group">
+				<label for="faixa21Perc">Faixa 21 Percentual</label>
+				<input id="faixa21Perc" placeholder="Faixa 021 Percentual 0.0000" required type="text"
+					th:field="*{valorfaixa021}" onkeypress="$(this).mask('0.0000', {reverse: true})"
+					class="form-control" />
+			</div>
+
+			<div class="form-group">
+				<label for="faixa22Perc">Faixa 22 Percentual</label>
+				<input id="faixa22Perc" placeholder="Faixa 022 Percentual 0.0000" required type="text"
+					th:field="*{valorfaixa022}" onkeypress="$(this).mask('0.0000', {reverse: true})"
+					class="form-control" />
+			</div>
+
+			<div class="form-group">
+				<label for="faixa23Perc">Faixa 23 Percentual</label>
+				<input id="faixa23Perc" placeholder="Faixa 023 Percentual 0.0000" required type="text"
+					th:field="*{valorfaixa023}" onkeypress="$(this).mask('0.0000', {reverse: true})"
+					class="form-control" />
+			</div>
+
+			<div class="form-group">
+				<label for="faixa24Perc">Faixa 24 Percentual</label>
+				<input id="faixa24Perc" placeholder="Faixa 024 Percentual 0.0000" required type="text"
+					th:field="*{valorfaixa024}" onkeypress="$(this).mask('0.0000', {reverse: true})"
+					class="form-control" />
+			</div>
+
+			<div class="form-group">
+				<label for="faixa25Perc">Faixa 25 Percentual</label>
+				<input id="faixa25Perc" placeholder="Faixa 025 Percentual 0.0000" required type="text"
+					th:field="*{valorfaixa025}" onkeypress="$(this).mask('0.0000', {reverse: true})"
+					class="form-control" />
+			</div>
+			<!--###FECHAMENTO DIV "form-row"###-->
+		</div>
+
+		<div class="form-row">
+			<div class="form-group">
+				<label for="faixa26Perc">Faixa 26 Percentual</label>
+				<input id="faixa26Perc" placeholder="Faixa 026 Percentual 0.0000" required type="text"
+					th:field="*{valorfaixa026}" onkeypress="$(this).mask('0.0000', {reverse: true})"
+					class="form-control" />
+			</div>
+
+			<div class="form-group">
+				<label for="faixa27Perc">Faixa 27 Percentual</label>
+				<input id="faixa27Perc" placeholder="Faixa 027 Percentual 0.0000" required type="text"
+					th:field="*{valorfaixa027}" onkeypress="$(this).mask('0.0000', {reverse: true})"
+					class="form-control" />
+			</div>
+
+			<div class="form-group">
+				<label for="faixa28Perc">Faixa 28 Percentual</label>
+				<input id="faixa28Perc" placeholder="Faixa 028 Percentual 0.0000" required type="text"
+					th:field="*{valorfaixa028}" onkeypress="$(this).mask('0.0000', {reverse: true})"
+					class="form-control" />
+			</div>
+
+			<div class="form-group">
+				<label for="faixa29Perc">Faixa 29 Percentual</label>
+				<input id="faixa29Perc" placeholder="Faixa 029 Percentual 0.0000" required type="text"
+					th:field="*{valorfaixa029}" onkeypress="$(this).mask('0.0000', {reverse: true})"
+					class="form-control" />
+			</div>
+
+			<div class="form-group">
+				<label for="faixa30Perc">Faixa 30 Percentual</label>
+				<input id="faixa30Perc" placeholder="Faixa 030 Percentual 0.0000" required type="text"
+					th:field="*{valorfaixa030}" onkeypress="$(this).mask('0.0000', {reverse: true})"
+					class="form-control" />
+			</div>
+			<!--###FECHAMENTO DIV "form-row"###-->
+		</div>
+
+		<input type="submit" class="btn btn-primary" value="Salvar">
+
+	</form>
+
+</body>
+
+</html>

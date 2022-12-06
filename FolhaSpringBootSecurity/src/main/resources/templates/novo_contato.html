@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Criar Novo Contato</title>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+
+	<!-- ##Formato e Caminho do Thymeleaf para executar arquivos CSS e Java Scripty dentro do projeto
+	src/main/resources/static/css e src/main/resources/static/js
+	 -->
+	<link th:href="@{/css/mainricci.css}" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" th:src="@{/js/cepjs.js}" defer></script>
+
+</head>
+
+<body class="imagemacoes">
+	<div align="center">
+		<h1>Inclusão de Contatos</h1>
+		<br />
+		<form action="#" th:action="@{/api/savefront}" th:object="${incluirContatoHtml}" method="post">
+
+			<table border="0" cellpadding="10">
+
+				<tr>
+					<td>Nome:</td>
+					<td>
+						<input type="text" th:field="*{userName}" required />
+					</td>
+				</tr>
+
+				<tr>
+					<td>Telefone:</td>
+					<td>
+						<input type="text" class="form-control" onkeypress="$(this).mask('(00) 00000-0000')"
+							th:field="*{mobileNo}">
+					</td>
+				</tr>
+
+				<tr>
+					<td>Email:</td>
+					<td><input type="email" name="email" placeholder="E-Mail" th:field="*{emailId}" /></td>
+				</tr>
+				<tr>
+					<td>Título E-mail:</td>
+					<td><input type="text" placeholder="Título E-mail" th:field="*{emailtitulo}" /></td>
+				</tr>
+				<tr>
+					<td>Mensagem E-mail:</td>
+					<td><input type="text" placeholder="Mensagem E-mail" th:field="*{emailmensagem}" /></td>
+				</tr>
+
+				<tr>
+					<td>CEP:</td>
+					<td>
+					<input type="text" name="cep" id="cep" class="form-control" onkeypress="$(this).mask('00000000')" th:field="*{cep}">
+					</td>
+				</tr>
+				
+				<tr>
+					<td>ENDEREÇO:</td>
+					<td><input type="text" name="rua" id="rua" th:field="*{endereco}" /></td>
+				</tr>
+
+				<tr>
+					<td>NÚMERO:</td>
+					<td><input type="text" th:field="*{numero}" /></td>
+				</tr>
+
+				<tr>
+					<td>COMPLEMENTO:</td>
+					<td><input type="text" th:field="*{complemento}" /></td>
+				</tr>
+
+				<tr>
+					<td>BAIRRO:</td>
+					<td><input type="text" name="bairro" id="bairro" th:field="*{bairro}" /></td>
+				</tr>
+				
+				<tr>
+					<td>CIDADE:</td>
+					<td><input type="text" name="cidade" id="cidade" th:field="*{city}" /></td>
+				</tr>
+
+				<tr>
+					<td>ESTADO:</td>
+					<td><input type="text" name="estado" id="estado" th:field="*{estado}" /></td>
+				</tr>
+
+				<tr>
+					<td>CPF:</td>
+					<td>
+					<input type="text" class="form-control" onkeypress="$(this).mask('000.000.000-00')" th:field="*{cpf}">
+					</td>
+				</tr>
+
+				<tr>
+					<td>CNPJ:</td>
+					<td>
+					<input type="text" class="form-control" onkeypress="$(this).mask('00.000.000/0000-00')" th:field="*{cnpj}">
+					</td>
+				</tr>
+				
+				<tr>
+					<td>Senha:</td>
+					<td>
+						<input type="password" th:field="*{password}" />
+					</td>
+				</tr>
+
+				<tr>
+					<td>Salário:</td>
+					<td>
+						<input type="text" class="form-control" onkeypress="$(this).mask('##0.00', {reverse: true})"
+							th:field="*{salario}" placeholder="Informa 0.00 ou Salário" required />
+					</td>
+				</tr>
+
+				<tr>
+					<td>Horas Base:</td>
+					<td>
+						<input type="text" class="form-control" onkeypress="$(this).mask('##0.00', {reverse: true})"
+							th:field="*{horasBase}" placeholder="Informa 0.00 ou Horas Base" required />
+					</td>
+				</tr>
+				<tr>
+					<td>Sal.Dia:</td>
+					<td>
+						<input type="text" class="form-control" onkeypress="$(this).mask('##0.00', {reverse: true})"
+							th:field="*{salarioDia}" placeholder="Informa 0.00 ou Salário Dia" required />
+					</td>
+				</tr>
+				<tr>
+					<td>Sal.Hora:</td>
+					<td>
+						<input type="text" class="form-control" onkeypress="$(this).mask('##0.00', {reverse: true})"
+							th:field="*{salarioHora}" placeholder="Informa 0.00 ou Salário Hora" required />
+					</td>
+				</tr>
+				<tr>
+					<td>Sal.Pagar:</td>
+					<td>
+						<input type="text" class="form-control" onkeypress="$(this).mask('##0.00', {reverse: true})"
+							th:field="*{salarioPagar}" placeholder="Informa 0.00 ou Salário a Pagar" required />
+					</td>
+				</tr>
+				<tr>
+					<td>INSS:</td>
+					<td>
+						<input type="text" class="form-control" onkeypress="$(this).mask('##0.00', {reverse: true})"
+							th:field="*{inssValor}" placeholder="Informa 0.00 ou Valor INSS" required />
+					</td>
+				</tr>
+
+				<tr>
+					<td>Qtd Dias Trab:</td>
+					<td>
+						<input type="text" class="form-control" onkeypress="$(this).mask('##0.00', {reverse: true})"
+							th:field="*{diasTrabalahados}" placeholder="Informa 0.00 ou Dias Trabalhados" required />
+					</td>
+				</tr>
+				<tr>
+					<td>Qtd Horas Trab:</td>
+					<td>
+						<input type="text" class="form-control" onkeypress="$(this).mask('##0.00', {reverse: true})"
+							th:field="*{horasTrabalahadas}" placeholder="Informa 0.00 ou Horas Trabalhadas" required />
+					</td>
+				</tr>
+				<tr>
+					<td>Qtd Dep Irrf:</td>
+					<td>
+						<input type="text" class="form-control" onkeypress="$(this).mask('##0.00', {reverse: true})"
+							th:field="*{qtddepirrf}" placeholder="Informa 0.00 ou Quantidade" required />
+					</td>
+				</tr>
+				<tr>
+					<td>Qtd Dep Sal.Fam:</td>
+					<td>
+						<input type="text" class="form-control" onkeypress="$(this).mask('##0.00', {reverse: true})"
+							th:field="*{qtddepsalfam}" placeholder="Informa 0.00 ou Quantidade" required />
+					</td>
+				</tr>
+				<tr>
+					<td>Qtd H.E 001:</td>
+					<td>
+						<input type="text" class="form-control" onkeypress="$(this).mask('##0.00', {reverse: true})"
+							th:field="*{qtdHorasExtra001}" placeholder="Informa 0.00 ou Quantidade" required />
+					</td>
+				</tr>
+				<tr>
+					<td>Valor H.E 001:</td>
+					<td>
+						<input type="text" class="form-control" onkeypress="$(this).mask('##0.00', {reverse: true})"
+							th:field="*{valorHorasExtra001}" placeholder="Informa 0.00 ou Valor" required />
+					</td>
+				</tr>
+				<tr>
+					<td>Qtd H.E 002:</td>
+					<td>
+						<input type="text" class="form-control" onkeypress="$(this).mask('##0.00', {reverse: true})"
+							th:field="*{qtdHorasExtra002}" placeholder="Informa 0.00 ou Quantidade" required />
+					</td>
+				</tr>
+				<tr>
+					<td>Valor H.E 002:</td>
+					<td>
+						<input type="text" class="form-control" onkeypress="$(this).mask('##0.00', {reverse: true})"
+							th:field="*{valorHorasExtra002}" placeholder="Informa 0.00 ou Valor" required />
+					</td>
+				</tr>
+				<tr>
+					<td>Valor DSR:</td>
+					<td>
+						<input type="text" class="form-control" onkeypress="$(this).mask('##0.00', {reverse: true})"
+							th:field="*{valorDsr}" placeholder="Informa 0.00 ou Valor" required />
+					</td>
+				</tr>
+				<tr>
+					<td>Valor Sal.Fam:</td>
+					<td>
+						<input type="text" class="form-control" onkeypress="$(this).mask('##0.00', {reverse: true})"
+							th:field="*{valorsalfam}" placeholder="Informa 0.00 ou Valor" required />
+					</td>
+				</tr>
+				<tr>
+					<td>IRRF:</td>
+					<td>
+						<input type="text" class="form-control" onkeypress="$(this).mask('##0.00', {reverse: true})"
+							th:field="*{irrfValor}" placeholder="Informa 0.00 ou Valor" required />
+					</td>
+				</tr>
+				<tr>
+					<td>Perc.P.Priv:</td>
+					<td>
+						<input type="text" class="form-control" onkeypress="$(this).mask('0.0000', {reverse: true})"
+							th:field="*{percPrevPrivada}" placeholder="Informa 0.00 ou Valor" required />
+					</td>
+				</tr>
+				<tr>
+					<td>Valor P.Priv:</td>
+					<td>
+						<input type="text" class="form-control" onkeypress="$(this).mask('##0.00', {reverse: true})"
+							th:field="*{valorPrevPrivada}" placeholder="Informa 0.00 ou Valor" required />
+					</td>
+				</tr>
+				<tr>
+					<td>Qtd Dias Faltas:</td>
+					<td>
+						<input type="text" class="form-control" onkeypress="$(this).mask('##0.00', {reverse: true})"
+							th:field="*{qtdDiasFaltas}" placeholder="Informa 0.00 ou Quantidade" required />
+					</td>
+				</tr>
+				<tr>
+					<td>Valor Dias Faltas:</td>
+					<td>
+						<input type="text" class="form-control" onkeypress="$(this).mask('##0.00', {reverse: true})"
+							th:field="*{valorDiasFaltas}" placeholder="Informa 0.00 ou Valor" required />
+					</td>
+				</tr>
+				<tr>
+					<td>Qtd Horas Atraso:</td>
+					<td>
+						<input type="text" class="form-control" onkeypress="$(this).mask('##0.00', {reverse: true})"
+							th:field="*{qtdHorasAtraso}" placeholder="Informa 0.00 ou Quantidade" required />
+					</td>
+				</tr>
+				<tr>
+					<td>Valor Horas Atraso:</td>
+					<td>
+						<input type="text" class="form-control" onkeypress="$(this).mask('##0.00', {reverse: true})"
+							th:field="*{valorHorasAtraso}" placeholder="Informa 0.00 ou Valor" required />
+					</td>
+				</tr>
+				<tr>
+					<td>Base INSS:</td>
+					<td>
+						<input type="text" class="form-control" onkeypress="$(this).mask('##0.00', {reverse: true})"
+							th:field="*{valorBaseInss}" placeholder="Informa 0.00 ou Valor" required />
+					</td>
+				</tr>
+				<tr>
+					<td>Base IRRF:</td>
+					<td>
+						<input type="text" class="form-control" onkeypress="$(this).mask('##0.00', {reverse: true})"
+							th:field="*{valorBaseIrrf}" placeholder="Informa 0.00 ou Valor" required />
+					</td>
+				</tr>
+				<tr>
+					<td>Base Sal.Fam:</td>
+					<td>
+						<input type="text" class="form-control" onkeypress="$(this).mask('##0.00', {reverse: true})"
+							th:field="*{valorBaseSalFam}" placeholder="Informa 0.00 ou Valor" required />
+					</td>
+				</tr>
+
+
+				<tr>
+					<td colspan="2"><button type="submit">Salvar</button> </td>
+				</tr>
+
+			</table>
+		</form>
+	</div>
+
+</body>
+
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Encargos</title>
+</head>
+
+<body>
+	<div align="center">
+		<h1>Histórico Encargos</h1>
+		<a href="inclusao">Criar Nova Tabela</a>
+		<br /><br />
+		<table border="1" cellpadding="10">
+			<thead>
+				<tr>
+					<th>Id </th>
+					<th>Sit</th>
+					<th>Nome Tabela</th>
+					<th>Data Início</th>
+					<th>Data Fim</th>
+					<th>Fx 01 Vl</th>
+					<th>Fx 02 Vl</th>
+					<th>Fx 03 Vl</th>
+					<th>Fx 04 Vl</th>
+					<th>Fx 05 Vl</th>
+					<th>Fx 06 Vl</th>
+					<th>Fx 07 Vl</th>
+					<th>Fx 08 Vl</th>
+					<th>Fx 09 Vl</th>
+					<th>Fx 10 Vl</th>
+					<th>Fx 11 Vl</th>
+					<th>Fx 12 Vl</th>
+					<th>Fx 13 Vl</th>
+					<th>Fx 14 Vl</th>
+					<th>Fx 15 Vl</th>
+					<th>Fx 16 Vl</th>
+					<th>Fx 17 Vl</th>
+					<th>Fx 18 Vl</th>
+					<th>Fx 19 Vl</th>
+					<th>Fx 20 Vl</th>
+					<th>Fx 21 %</th>
+					<th>Fx 22 %</th>
+					<th>Fx 23 %</th>
+					<th>Fx 24 %</th>
+					<th>Fx 25 %</th>
+					<th>Fx 26 %</th>
+					<th>Fx 27 %</th>
+					<th>Fx 28 %</th>
+					<th>Fx 29 %</th>
+					<th>Fx 30 %</th>
+					<th>Ações</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="encargos : ${listEncSocHtml}">
+					<td th:text="${encargos.id}">ID</td>
+					<td th:text="${encargos.situacao}">Situacao</td>
+					<td th:text="${encargos.nomeTabela}">Nome Tabela</td>
+					<td th:text="${encargos.dataInicio}">Data Início</td>
+					<td th:text="${encargos.dataFim}">Data Fim</td>
+					<td th:text="${encargos.valorfaixa001}">Fx 01 Vl</td>
+					<td th:text="${encargos.valorfaixa002}">Fx 02 Vl</td>
+					<td th:text="${encargos.valorfaixa003}">Fx 03 Vl</td>
+					<td th:text="${encargos.valorfaixa004}">Fx 04 Vl</td>
+					<td th:text="${encargos.valorfaixa005}">Fx 05 Vl</td>
+					<td th:text="${encargos.valorfaixa006}">Fx 06 Vl</td>
+					<td th:text="${encargos.valorfaixa007}">Fx 07 Vl</td>
+					<td th:text="${encargos.valorfaixa008}">Fx 08 Vl</td>
+					<td th:text="${encargos.valorfaixa009}">Fx 09 Vl</td>
+					<td th:text="${encargos.valorfaixa010}">Fx 10 Vl</td>
+					<td th:text="${encargos.valorfaixa011}">Fx 11 Vl</td>
+					<td th:text="${encargos.valorfaixa012}">Fx 12 Vl</td>
+					<td th:text="${encargos.valorfaixa013}">Fx 13 Vl</td>
+					<td th:text="${encargos.valorfaixa014}">Fx 14 Vl</td>
+					<td th:text="${encargos.valorfaixa015}">Fx 15 Vl</td>
+					<td th:text="${encargos.valorfaixa016}">Fx 16 Vl</td>
+					<td th:text="${encargos.valorfaixa017}">Fx 17 Vl</td>
+					<td th:text="${encargos.valorfaixa018}">Fx 18 Vl</td>
+					<td th:text="${encargos.valorfaixa019}">Fx 19 Vl</td>
+					<td th:text="${encargos.valorfaixa020}">Fx 20 Vl</td>
+					<td th:text="${encargos.valorfaixa021}">Fx 21 %</td>
+					<td th:text="${encargos.valorfaixa022}">Fx 22 %</td>
+					<td th:text="${encargos.valorfaixa023}">Fx 23 %</td>
+					<td th:text="${encargos.valorfaixa024}">Fx 24 %</td>
+					<td th:text="${encargos.valorfaixa025}">Fx 25 %</td>
+					<td th:text="${encargos.valorfaixa026}">Fx 26 %</td>
+					<td th:text="${encargos.valorfaixa027}">Fx 27 %</td>
+					<td th:text="${encargos.valorfaixa028}">Fx 28 %</td>
+					<td th:text="${encargos.valorfaixa029}">Fx 29 %</td>
+					<td th:text="${encargos.valorfaixa030}">Fx 30 %</td>
+
+					<td>
+						<a th:href="@{'/apiencargos/edit/' + ${encargos.id}}">Alterar</a>
+						&nbsp;&nbsp;&nbsp;
+						<a th:href="@{'/apiencargos/delete/' + ${encargos.id}}">Excluir</a>
+
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+
+</html>

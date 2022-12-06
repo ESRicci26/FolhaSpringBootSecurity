@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Contatos</title>
+	<script type="text/javascript" th:src="@{/js/ricciactions.js}"></script>
+	
+	<!-- MEU ESTILO CSS --> 
+<link rel="stylesheet" media="screen" th:href="@{/css/imagemtela.css}"/>
+
+</head>
+
+<body class="imagembody">
+
+
+	<div align="center">
+		<h1>Lista de Contatos</h1>
+		<a href="inclusaocontratado">Criar Novo Contratado</a>
+		<br /><br />
+		<a href="exportar-para-excel" class="btn btn-primary">Download Arquivo Excel</a>
+		<br /><br />
+		<a href="exportar-para-pdf" class="btn btn-primary">Download Arquivo PDF</a>
+		<br /><br />
+		<a href="exportar-para-csv" class="btn btn-primary">Download Arquivo CSV</a>
+		<br /><br />
+		
+  	   <a href="http://localhost:8080/menuprincipal" class="btn btn-primary">Voltar Menu</a>
+		<br /><br />
+
+		
+		<table border="1" cellpadding="10">
+			<thead>
+				<tr>
+					<th>ID Contato</th>
+					<th>Nome</th>
+					<th>Telefone</th>
+					<th>Email</th>
+					<th>Cidade</th>
+					<th>Senha</th>
+					<th>Salario</th>
+					<th>Horas Base</th>
+					<th>Sal.Dia</th>
+					<th>Sal.Hora</th>
+					<th>Sal.Pagar</th>
+					<th>Vl INSS</th>
+					<th>Ações</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="contato : ${listPessoasHtml}">
+					<td th:text="${contato.id}">ID</td>
+					<td th:text="${contato.userName}">Nome</td>
+					<td th:text="${contato.mobileNo}">Telefone</td>
+					<td th:text="${contato.emailId}">Email</td>
+					<td th:text="${contato.city}">Cidade</td>
+					<td th:text="${contato.password}">Senha</td>
+					<td th:text="${contato.salario}">Salario</td>
+					<td th:text="${contato.horasBase}">Horas Base</td>
+					<td th:text="${contato.salarioDia}">Sal.Dia</td>
+					<td th:text="${contato.salarioHora}">Sal.Hora</td>
+					<td th:text="${contato.salarioPagar}">Sal.Pagar</td>
+					<td th:text="${contato.inssValor}">Vl INSS</td>
+
+					<td>
+						<a th:href="@{'/api/edit/' + ${contato.id}}">Alterar</a>
+						&nbsp;&nbsp;&nbsp;
+						<a th:href="@{'/api/delete/' + ${contato.id}}">Excluir</a>
+						&nbsp;&nbsp;&nbsp;
+						<a th:href="@{'/api/calcinss/' + ${contato.id}}">Calcular</a>
+						&nbsp;&nbsp;&nbsp; <a
+						th:href="@{'/api/enviaremail/' + ${contato.id}}" id="idemailenviado" onclick="enviar()">Email</a></td>
+
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		
+<!--  
+		<input id="textinput" name="textinput" value="" type="text">
+		<button onclick="enviar()">Confirmar</button>
+-->
+		
+	</div>
+</body>
+
+</html>

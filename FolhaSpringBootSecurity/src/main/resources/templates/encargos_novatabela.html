@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Criar Nova Tabela</title>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+
+	<!-- ##Formato e Caminho do Thymeleaf para executar arquivos CSS e Java Scripty dentro do projeto
+	src/main/resources/static/css e src/main/resources/static/js
+	 -->
+	<link th:href="@{/css/mainricci.css}" rel="stylesheet" type="text/css" />
+	<!-- <script type="text/javascript" th:src="@{/js/scriptjs.js}"></script> -->
+
+</head>
+
+<body>
+	<div align="center">
+		<h1>Inclusão de Tabelas</h1>
+		<br />
+		<form action="#" th:action="@{/apiencargos/savefront}" th:object="${incluirEncSociaisHtml}" method="post">
+
+			<table border="0" cellpadding="10">
+
+				<tr>
+					<td>Sit:</td>
+					<td>
+						<input type="checkbox" name="situacao" th:checked="*{situacao}" />
+					</td>
+				</tr>
+				<tr>
+					<td>Nome Tabela:</td>
+					<td>
+						<input type="text" th:field="*{nomeTabela}" required />
+					</td>
+				</tr>
+				<tr>
+					<td>Data Início:</td>
+					<td>
+						<input type="text" th:field="*{dataInicio}" onkeypress="$(this).mask('00/00/0000')" />
+					</td>
+				</tr>
+				<tr>
+					<td>Data Fim:</td>
+					<td><input type="text" th:field="*{dataFim}" onkeypress="$(this).mask('00/00/0000')" /></td>
+				</tr>
+				<tr>
+					<td>Faixa 01 Vl:</td>
+					<td><input type="text" th:field="*{valorfaixa001}" class="form-control"
+							onkeypress="$(this).mask('##0.00', {reverse: true})" placeholder="Informa 0.00 ou Valor"
+							required /></td>
+				</tr>
+				<tr>
+					<td>Faixa 02 Vl:</td>
+					<td><input type="text" th:field="*{valorfaixa002}" class="form-control"
+							onkeypress="$(this).mask('##0.00', {reverse: true})" placeholder="Informa 0.00 ou Valor"
+							required /></td>
+				</tr>
+				<tr>
+					<td>Faixa 03 Vl:</td>
+					<td>
+						<input type="text" th:field="*{valorfaixa003}" class="form-control"
+							onkeypress="$(this).mask('##0.00', {reverse: true})" placeholder="Informa 0.00 ou Valor"
+							required />
+					</td>
+				</tr>
+
+				<tr>
+					<td>Faixa 04 Vl:</td>
+					<td>
+						<input type="text" th:field="*{valorfaixa004}" class="form-control"
+							onkeypress="$(this).mask('##0.00', {reverse: true})" placeholder="Informa 0.00 ou Valor"
+							required />
+					</td>
+				</tr>
+				<tr>
+					<td>Faixa 05 Vl:</td>
+					<td>
+						<input type="text" th:field="*{valorfaixa005}" class="form-control"
+							onkeypress="$(this).mask('##0.00', {reverse: true})" placeholder="Informa 0.00 ou Valor"
+							required />
+					</td>
+				</tr>
+				<tr>
+					<td>Faixa 06 Vl:</td>
+					<td>
+						<input type="text" th:field="*{valorfaixa006}" class="form-control"
+							onkeypress="$(this).mask('##0.00', {reverse: true})" placeholder="Informa 0.00 ou Valor"
+							required />
+					</td>
+				</tr>
+
+				<tr>
+					<td>Faixa 07 Vl:</td>
+					<td>
+						<input type="text" th:field="*{valorfaixa007}" class="form-control"
+							onkeypress="$(this).mask('##0.00', {reverse: true})" placeholder="Informa 0.00 ou Valor"
+							required />
+					</td>
+				</tr>
+				<tr>
+					<td>Faixa 08 Vl:</td>
+					<td>
+						<input type="text" th:field="*{valorfaixa008}" class="form-control"
+							onkeypress="$(this).mask('##0.00', {reverse: true})" placeholder="Informa 0.00 ou Valor"
+							required />
+					</td>
+				</tr>
+				<tr>
+					<td>Faixa 09 Vl:</td>
+					<td>
+						<input type="text" th:field="*{valorfaixa009}" class="form-control"
+							onkeypress="$(this).mask('##0.00', {reverse: true})" placeholder="Informa 0.00 ou Valor"
+							required />
+					</td>
+				</tr>
+
+				<tr>
+					<td>Faixa 10 Vl:</td>
+					<td>
+						<input type="text" th:field="*{valorfaixa010}" class="form-control"
+							onkeypress="$(this).mask('##0.00', {reverse: true})" placeholder="Informa 0.00 ou Valor"
+							required />
+					</td>
+				</tr>
+				<tr>
+					<td>Faixa 11 Vl:</td>
+					<td>
+						<input type="text" th:field="*{valorfaixa011}" class="form-control"
+							onkeypress="$(this).mask('##0.00', {reverse: true})" placeholder="Informa 0.00 ou Valor"
+							required />
+					</td>
+				</tr>
+				<tr>
+					<td>Faixa 12 Vl:</td>
+					<td>
+						<input type="text" th:field="*{valorfaixa012}" class="form-control"
+							onkeypress="$(this).mask('##0.00', {reverse: true})" placeholder="Informa 0.00 ou Valor"
+							required />
+					</td>
+				</tr>
+				<tr>
+					<td>Faixa 13 Vl:</td>
+					<td>
+						<input type="text" th:field="*{valorfaixa013}" class="form-control"
+							onkeypress="$(this).mask('##0.00', {reverse: true})" placeholder="Informa 0.00 ou Valor"
+							required />
+					</td>
+				</tr>
+				<tr>
+					<td>Faixa 14 Vl:</td>
+					<td>
+						<input type="text" th:field="*{valorfaixa014}" class="form-control"
+							onkeypress="$(this).mask('##0.00', {reverse: true})" placeholder="Informa 0.00 ou Valor"
+							required />
+					</td>
+				</tr>
+				<tr>
+					<td>Faixa 15 Vl:</td>
+					<td>
+						<input type="text" th:field="*{valorfaixa015}" class="form-control"
+							onkeypress="$(this).mask('##0.00', {reverse: true})" placeholder="Informa 0.00 ou Valor"
+							required />
+					</td>
+				</tr>
+				<tr>
+					<td>Fx 16 Vl:</td>
+					<td>
+						<input type="text" th:field="*{valorfaixa016}" class="form-control"
+							onkeypress="$(this).mask('##0.00', {reverse: true})" placeholder="Informa 0.00 ou Valor"
+							required />
+					</td>
+				</tr>
+				<tr>
+					<td>Fx 17 Vl:</td>
+					<td>
+						<input type="text" th:field="*{valorfaixa017}" class="form-control"
+							onkeypress="$(this).mask('##0.00', {reverse: true})" placeholder="Informa 0.00 ou Valor"
+							required />
+					</td>
+				</tr>
+				<tr>
+					<td>Fx 18 Vl:</td>
+					<td>
+						<input type="text" th:field="*{valorfaixa018}" class="form-control"
+							onkeypress="$(this).mask('##0.00', {reverse: true})" placeholder="Informa 0.00 ou Valor"
+							required />
+					</td>
+				</tr>
+				<tr>
+					<td>Fx 19 Vl:</td>
+					<td>
+						<input type="text" th:field="*{valorfaixa019}" class="form-control"
+							onkeypress="$(this).mask('##0.00', {reverse: true})" placeholder="Informa 0.00 ou Valor"
+							required />
+					</td>
+				</tr>
+				<tr>
+					<td>Fx 20 Vl:</td>
+					<td>
+						<input type="text" th:field="*{valorfaixa020}" class="form-control"
+							onkeypress="$(this).mask('##0.00', {reverse: true})" placeholder="Informa 0.00 ou Valor"
+							required />
+					</td>
+				</tr>
+
+				<tr>
+					<td>Fx 21 %:</td>
+					<td>
+						<input type="text" th:field="*{valorfaixa021}" class="form-control"
+							onkeypress="$(this).mask('0.0000', {reverse: true})" placeholder="Informa 0.00 ou Valor"
+							required />
+					</td>
+				</tr>
+				<tr>
+					<td>Fx 22 %:</td>
+					<td>
+						<input type="text" th:field="*{valorfaixa022}" class="form-control"
+							onkeypress="$(this).mask('0.0000', {reverse: true})" placeholder="Informa 0.00 ou Valor"
+							required />
+					</td>
+				</tr>
+				<tr>
+					<td>Fx 23 %:</td>
+					<td>
+						<input type="text" th:field="*{valorfaixa023}" class="form-control"
+							onkeypress="$(this).mask('0.0000', {reverse: true})" placeholder="Informa 0.00 ou Valor"
+							required />
+					</td>
+				</tr>
+				<tr>
+					<td>Fx 24 %:</td>
+					<td>
+						<input type="text" th:field="*{valorfaixa024}" class="form-control"
+							onkeypress="$(this).mask('0.0000', {reverse: true})" placeholder="Informa 0.00 ou Valor"
+							required />
+					</td>
+				</tr>
+				<tr>
+					<td>Fx 25 %:</td>
+					<td>
+						<input type="text" th:field="*{valorfaixa025}" class="form-control"
+							onkeypress="$(this).mask('0.0000', {reverse: true})" placeholder="Informa 0.00 ou Valor"
+							required />
+					</td>
+				</tr>
+				<tr>
+					<td>Fx 26 %:</td>
+					<td>
+						<input type="text" th:field="*{valorfaixa026}" class="form-control"
+							onkeypress="$(this).mask('0.0000', {reverse: true})" placeholder="Informa 0.00 ou Valor"
+							required />
+					</td>
+				</tr>
+				<tr>
+					<td>Fx 27 %:</td>
+					<td>
+						<input type="text" th:field="*{valorfaixa027}" class="form-control"
+							onkeypress="$(this).mask('0.0000', {reverse: true})" placeholder="Informa 0.00 ou Valor"
+							required />
+					</td>
+				</tr>
+				<tr>
+					<td>Fx 28 %:</td>
+					<td>
+						<input type="text" th:field="*{valorfaixa028}" class="form-control"
+							onkeypress="$(this).mask('0.0000', {reverse: true})" placeholder="Informa 0.00 ou Valor"
+							required />
+					</td>
+				</tr>
+				<tr>
+					<td>Fx 29 %:</td>
+					<td>
+						<input type="text" th:field="*{valorfaixa029}" class="form-control"
+							onkeypress="$(this).mask('0.0000', {reverse: true})" placeholder="Informa 0.00 ou Valor"
+							required />
+					</td>
+				</tr>
+				<tr>
+					<td>Fx 30 %:</td>
+					<td>
+						<input type="text" th:field="*{valorfaixa030}" class="form-control"
+							onkeypress="$(this).mask('0.0000', {reverse: true})" placeholder="Informa 0.00 ou Valor"
+							required />
+					</td>
+				</tr>
+
+
+				<tr>
+					<td colspan="2"><button type="submit">Salvar</button> </td>
+				</tr>
+
+			</table>
+		</form>
+	</div>
+
+<!--
+	</script>
+	<script src="scriptjs.js">
+	</script>
+-->
+</body>
+
+</html>
